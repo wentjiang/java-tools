@@ -10,6 +10,7 @@
     <version>1.0</version>
     <modules>
         <module>jcommander</module>
+        <module>exam-tool</module>
     </modules>
 
 
