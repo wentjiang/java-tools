@@ -2,7 +2,6 @@ package com.wentjiang.examtool;
 
 import java.io.*;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class AnswerChecker {
 
@@ -16,14 +15,17 @@ public class AnswerChecker {
 
         List<WrongResult> wrongResults = new ArrayList<>();
 
-        List<List<String>> rightAnswers = readAnswerAsList(rightAnswerPath);
-        List<List<String>> yourAnswers = readAnswerAsList(yourAnswerPath);
-        for (int i = 1; i < yourAnswers.size() + 1; i++) {
-            if (isRight(rightAnswers.get(i), yourAnswers.get(i))) {
+        Map<Integer,Answer> rightAnswers = readAnswerAsMap(rightAnswerPath);
+        Map<Integer,Answer> yourAnswers = readAnswerAsMap(yourAnswerPath);
+        for (Map.Entry<Integer,Answer> entry: yourAnswers.entrySet()){
+            Integer questionNum = entry.getKey();
+            Answer yourAnswer = yourAnswers.get(questionNum);
+            Answer rightAnswer = rightAnswers.get(questionNum);
+            if (isRight(yourAnswer.getAnswers(),rightAnswer.getAnswers())){
                 rightCount++;
-            } else {
+            }else{
                 wrongCount++;
-                wrongResults.add(new WrongResult(i, rightAnswers.get(i), yourAnswers.get(i)));
+                wrongResults.add(new WrongResult(questionNum, rightAnswer.getAnswers(), yourAnswer.getAnswers()));
             }
         }
 
@@ -52,8 +54,8 @@ public class AnswerChecker {
     /**
      * support multiple choice answer, read as a char list
      */
-    public List<List<String>> readAnswerAsList(String filePath) {
-        List<List<String>> result = new ArrayList<>();
+    public Map<Integer,Answer> readAnswerAsMap(String filePath) {
+        Map<Integer,Answer> result = new HashMap<>();
         try (
                 FileInputStream inputStream = new FileInputStream(filePath);
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))
@@ -61,11 +63,8 @@ public class AnswerChecker {
             String str;
             while ((str = bufferedReader.readLine()) != null) {
                 if (str.trim().length() > 0) {
-                    List<String> answer = Arrays
-                            .stream(str.trim().toUpperCase().split(""))
-                            .sorted()
-                            .collect(Collectors.toList());
-                    result.add(answer);
+                    Answer answer = Answer.decodeAnswer(str);
+                    result.put(answer.getQuestionNum(),answer);
                 } else {
                     throw new IllegalStateException("check your file: " + filePath);
                 }
