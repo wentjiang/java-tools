@@ -1,7 +1,10 @@
 package com.wentjiang.examtool;
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class AnswerChecker {
 
@@ -9,37 +12,59 @@ public class AnswerChecker {
 
     }
 
-    public void checkAnswer(String rightAnswerPath, String yourAnswerPath) {
+    public void checkAnswer(String rightAnswerPath, String yourAnswerPath, String reportFile) {
         int rightCount = 0;
         int wrongCount = 0;
 
         List<WrongResult> wrongResults = new ArrayList<>();
 
-        Map<Integer,Answer> rightAnswers = readAnswerAsMap(rightAnswerPath);
-        Map<Integer,Answer> yourAnswers = readAnswerAsMap(yourAnswerPath);
-        for (Map.Entry<Integer,Answer> entry: yourAnswers.entrySet()){
+        Map<Integer, Answer> rightAnswers = readAnswerAsMap(rightAnswerPath);
+        Map<Integer, Answer> yourAnswers = readAnswerAsMap(yourAnswerPath);
+        for (Map.Entry<Integer, Answer> entry : yourAnswers.entrySet()) {
             Integer questionNum = entry.getKey();
             Answer yourAnswer = yourAnswers.get(questionNum);
             Answer rightAnswer = rightAnswers.get(questionNum);
-            if (isRight(yourAnswer.getAnswers(),rightAnswer.getAnswers())){
+            if (isRight(yourAnswer.getAnswers(), rightAnswer.getAnswers())) {
                 rightCount++;
-            }else{
+            } else {
                 wrongCount++;
                 wrongResults.add(new WrongResult(questionNum, rightAnswer.getAnswers(), yourAnswer.getAnswers()));
             }
         }
 
-        showResultInConsole(rightCount,wrongCount,wrongResults);
+        showResultInConsole(rightCount, wrongCount, wrongResults);
+        writeToReportFile(rightCount, wrongCount, wrongResults, reportFile);
+    }
+
+    private void writeToReportFile(int rightCount, int wrongCount, List<WrongResult> wrongResults, String reportFile) {
+        int total = rightCount + wrongCount;
+        double rightRate = (double) rightCount * 100 / total;
+        File file = new File(reportFile);
+        try (FileWriter fileWriter = new FileWriter(file)) {
+            fileWriter.write("Summary---------------------\n");
+            fileWriter.write("Total answer: " + total + ", right number: " + rightCount + ", wrong number: " + wrongCount + ", right rate: " + rightRate + "%\n");
+            fileWriter.write("Detail wrong info-------------\n");
+            wrongResults.forEach(result -> {
+                try {
+                    fileWriter.write(result.toString() + "\n");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void showResultInConsole(int rightCount, int wrongCount, List<WrongResult> wrongResults) {
         int total = rightCount + wrongCount;
-        double rightRate = (double)rightCount*100 / total;
+        double rightRate = (double) rightCount * 100 / total;
         System.out.println("Summary---------------------");
         System.out.println("Total answer: " + total + ", right number: " + rightCount + ", wrong number: " + wrongCount + ", right rate: " + rightRate + "%");
 
         System.out.println("Detail wrong info-------------");
-        wrongResults.stream().forEach(result ->{
+        wrongResults.stream().forEach(result -> {
             System.out.println(result.toString());
         });
     }
@@ -54,17 +79,17 @@ public class AnswerChecker {
     /**
      * support multiple choice answer, read as a char list
      */
-    public Map<Integer,Answer> readAnswerAsMap(String filePath) {
-        Map<Integer,Answer> result = new HashMap<>();
+    public Map<Integer, Answer> readAnswerAsMap(String filePath) {
+        Map<Integer, Answer> result = new HashMap<>();
         try (
-                FileInputStream inputStream = new FileInputStream(filePath);
+                InputStream inputStream = ClassLoader.getSystemResourceAsStream(filePath);
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))
         ) {
             String str;
             while ((str = bufferedReader.readLine()) != null) {
                 if (str.trim().length() > 0) {
                     Answer answer = Answer.decodeAnswer(str);
-                    result.put(answer.getQuestionNum(),answer);
+                    result.put(answer.getQuestionNum(), answer);
                 } else {
                     throw new IllegalStateException("check your file: " + filePath);
                 }

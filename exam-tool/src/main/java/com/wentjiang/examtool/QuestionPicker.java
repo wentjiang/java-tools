@@ -11,12 +11,6 @@ import java.util.*;
  */
 public class QuestionPicker {
 
-    public static void main(String[] args) {
-        QuestionPicker questionPicker = new QuestionPicker();
-        List<Integer> questions = questionPicker.randomPickQuestions(100, 65);
-        questionPicker.getQuestionsAsFile(questions);
-    }
-
     public List<Integer> randomPickQuestions(int totalNum, int pickNum) {
         List<Integer> questionNums = new ArrayList<>(pickNum);
         if (pickNum > totalNum) {

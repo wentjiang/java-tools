@@ -6,11 +6,6 @@ import java.io.IOException;
 
 public class QuestionListWriter {
 
-    public static void main(String[] args) {
-        QuestionListWriter questionListWriter = new QuestionListWriter();
-        questionListWriter.writeQuestionAsFile(136, "examTopic/examTopicAnswer.txt");
-    }
-
     public void writeQuestionAsFile(int number, String fileName) {
         File file = new File(fileName);
         try (FileWriter fileWriter = new FileWriter(file)) {
