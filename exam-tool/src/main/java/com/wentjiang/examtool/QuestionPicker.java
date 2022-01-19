@@ -16,18 +16,13 @@ public class QuestionPicker {
         if (pickNum > totalNum) {
             throw new IllegalStateException("Total number must greater than pick number");
         }
-        List<Integer> numberList = new ArrayList<>();
-        for (int i = 1; i < totalNum + 1; i++) {
-            numberList.add(i);
+        for (int i = 1; i <= pickNum; i++) {
+            questionNums.add(i);
         }
-        for (int i = pickNum; i > 0; i--) {
-            Random random = new Random();
-            int randomNum = random.nextInt(numberList.size());
-            int questionNum = numberList.get(randomNum);
-            numberList.remove(randomNum);
-            questionNums.add(questionNum);
+        for (int i = pickNum + 1; i <= totalNum; i++) {
+            if (Math.random() * i >= pickNum) continue;
+            questionNums.set((int) (Math.random() * pickNum), i);
         }
-        Collections.sort(questionNums);
         return questionNums;
     }
 

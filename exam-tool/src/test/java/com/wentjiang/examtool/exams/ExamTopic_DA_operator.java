@@ -13,7 +13,7 @@ public class ExamTopic_DA_operator {
     @org.junit.jupiter.api.Test
     public void pickQuestions() {
         QuestionPicker questionPicker = new QuestionPicker();
-        List<Integer> questions = questionPicker.randomPickQuestions(100, 65);
+        List<Integer> questions = questionPicker.randomPickQuestions(130, 65);
         questionPicker.getQuestionsAsFile(questions);
     }
 

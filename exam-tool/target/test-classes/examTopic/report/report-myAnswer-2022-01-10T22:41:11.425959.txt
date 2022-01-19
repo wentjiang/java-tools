@@ -1,0 +1,41 @@
+Summary---------------------
+Total answer: 130, right number: 92, wrong number: 38, right rate: 70.76923076923077%
+Detail wrong info-------------
+WrongResult{question=4, rightAnswer=[A], yourAnswer=[B]}
+WrongResult{question=12, rightAnswer=[C], yourAnswer=[A]}
+WrongResult{question=21, rightAnswer=[A], yourAnswer=[C]}
+WrongResult{question=26, rightAnswer=[A], yourAnswer=[C]}
+WrongResult{question=28, rightAnswer=[C], yourAnswer=[A]}
+WrongResult{question=29, rightAnswer=[B], yourAnswer=[A]}
+WrongResult{question=30, rightAnswer=[B], yourAnswer=[D]}
+WrongResult{question=36, rightAnswer=[B], yourAnswer=[D]}
+WrongResult{question=37, rightAnswer=[A], yourAnswer=[B]}
+WrongResult{question=39, rightAnswer=[C], yourAnswer=[D]}
+WrongResult{question=44, rightAnswer=[D], yourAnswer=[C]}
+WrongResult{question=45, rightAnswer=[C], yourAnswer=[B]}
+WrongResult{question=46, rightAnswer=[B], yourAnswer=[C]}
+WrongResult{question=47, rightAnswer=[B], yourAnswer=[A]}
+WrongResult{question=48, rightAnswer=[C, E], yourAnswer=[B, C]}
+WrongResult{question=51, rightAnswer=[A, C], yourAnswer=[C, D]}
+WrongResult{question=52, rightAnswer=[C], yourAnswer=[B]}
+WrongResult{question=53, rightAnswer=[D], yourAnswer=[A]}
+WrongResult{question=56, rightAnswer=[D], yourAnswer=[B]}
+WrongResult{question=60, rightAnswer=[C], yourAnswer=[B]}
+WrongResult{question=63, rightAnswer=[C], yourAnswer=[A]}
+WrongResult{question=73, rightAnswer=[B], yourAnswer=[A]}
+WrongResult{question=84, rightAnswer=[A], yourAnswer=[C]}
+WrongResult{question=86, rightAnswer=[C], yourAnswer=[B]}
+WrongResult{question=89, rightAnswer=[A, D, E], yourAnswer=[A, D, F]}
+WrongResult{question=93, rightAnswer=[B], yourAnswer=[D]}
+WrongResult{question=94, rightAnswer=[A], yourAnswer=[C]}
+WrongResult{question=96, rightAnswer=[D], yourAnswer=[A]}
+WrongResult{question=102, rightAnswer=[A], yourAnswer=[D]}
+WrongResult{question=103, rightAnswer=[A], yourAnswer=[C]}
+WrongResult{question=108, rightAnswer=[A], yourAnswer=[B]}
+WrongResult{question=111, rightAnswer=[C], yourAnswer=[D]}
+WrongResult{question=114, rightAnswer=[C], yourAnswer=[D]}
+WrongResult{question=121, rightAnswer=[B], yourAnswer=[D]}
+WrongResult{question=122, rightAnswer=[B], yourAnswer=[C]}
+WrongResult{question=123, rightAnswer=[B], yourAnswer=[C]}
+WrongResult{question=124, rightAnswer=[C], yourAnswer=[D]}
+WrongResult{question=127, rightAnswer=[C], yourAnswer=[B]}
