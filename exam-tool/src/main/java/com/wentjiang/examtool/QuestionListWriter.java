@@ -6,10 +6,10 @@ import java.io.IOException;
 
 public class QuestionListWriter {
 
-    public void writeQuestionAsFile(int number, String fileName) {
+    public void writeQuestionAsFile(int from, int size, String fileName) {
         File file = new File(fileName);
         try (FileWriter fileWriter = new FileWriter(file)) {
-            for (int i = 1; i < number + 1; i++) {
+            for (int i = from; i < from + size; i++) {
                 fileWriter.write(i + ":\n");
             }
         } catch (IOException e) {

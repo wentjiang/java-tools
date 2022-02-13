@@ -1,0 +1,12 @@
+Summary---------------------
+Total answer: 65, right number: 56, wrong number: 9, right rate: 86.15384615384616%
+Detail wrong info-------------
+WrongResult{question=4, rightAnswer=[A], yourAnswer=[C]}
+WrongResult{question=21, rightAnswer=[A], yourAnswer=[C]}
+WrongResult{question=24, rightAnswer=[D], yourAnswer=[C]}
+WrongResult{question=26, rightAnswer=[A], yourAnswer=[C]}
+WrongResult{question=37, rightAnswer=[A], yourAnswer=[D]}
+WrongResult{question=48, rightAnswer=[C, E], yourAnswer=[B, E]}
+WrongResult{question=56, rightAnswer=[D], yourAnswer=[B]}
+WrongResult{question=60, rightAnswer=[C], yourAnswer=[D]}
+WrongResult{question=64, rightAnswer=[A, D], yourAnswer=[A, C]}

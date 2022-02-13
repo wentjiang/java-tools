@@ -1,0 +1,25 @@
+Summary---------------------
+Total answer: 65, right number: 42, wrong number: 23, right rate: 64.61538461538461%
+Detail wrong info-------------
+WrongResult{question=1, rightAnswer=[A], yourAnswer=[D]}
+WrongResult{question=4, rightAnswer=[A], yourAnswer=[C]}
+WrongResult{question=5, rightAnswer=[B], yourAnswer=[C]}
+WrongResult{question=14, rightAnswer=[D], yourAnswer=[B]}
+WrongResult{question=15, rightAnswer=[B, C, F], yourAnswer=[C, D, F]}
+WrongResult{question=20, rightAnswer=[B], yourAnswer=[C]}
+WrongResult{question=23, rightAnswer=[A], yourAnswer=[B]}
+WrongResult{question=24, rightAnswer=[D], yourAnswer=[C]}
+WrongResult{question=25, rightAnswer=[A], yourAnswer=[C]}
+WrongResult{question=28, rightAnswer=[C], yourAnswer=[B]}
+WrongResult{question=31, rightAnswer=[D], yourAnswer=[A]}
+WrongResult{question=34, rightAnswer=[A, C], yourAnswer=[C, E]}
+WrongResult{question=36, rightAnswer=[B], yourAnswer=[D]}
+WrongResult{question=37, rightAnswer=[A], yourAnswer=[B]}
+WrongResult{question=41, rightAnswer=[B], yourAnswer=[C]}
+WrongResult{question=44, rightAnswer=[D], yourAnswer=[B]}
+WrongResult{question=45, rightAnswer=[C], yourAnswer=[B]}
+WrongResult{question=48, rightAnswer=[C, E], yourAnswer=[B, C]}
+WrongResult{question=52, rightAnswer=[C], yourAnswer=[A]}
+WrongResult{question=53, rightAnswer=[D], yourAnswer=[C]}
+WrongResult{question=60, rightAnswer=[C], yourAnswer=[B]}
+WrongResult{question=61, rightAnswer=[A], yourAnswer=[C]}
