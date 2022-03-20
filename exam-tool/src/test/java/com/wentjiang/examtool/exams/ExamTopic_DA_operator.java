@@ -28,7 +28,7 @@ public class ExamTopic_DA_operator {
     public void generateReport() {
         AnswerChecker answerChecker = new AnswerChecker();
         String prefix = "examTopic/";
-        String myAnswerFileName = "myAnswer-2022-02-12T12:39:11.841885.txt";
+        String myAnswerFileName = "myAnswer-2022-02-13T13:47:27.582768.txt";
 
         String rightAnswerPath = prefix + "examTopicAnswer.txt";
         String myAnswerPath = prefix + "myAnswer/" + myAnswerFileName;
