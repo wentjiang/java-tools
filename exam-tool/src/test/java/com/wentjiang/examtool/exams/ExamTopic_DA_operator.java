@@ -21,14 +21,14 @@ public class ExamTopic_DA_operator {
     public void questionList() {
         QuestionListWriter questionListWriter = new QuestionListWriter();
         String myAnswerFileName = "myAnswer-" + LocalDateTime.now() + ".txt";
-        questionListWriter.writeQuestionAsFile(66, 65, myAnswerFileName);
+        questionListWriter.writeQuestionAsFile(86, 10, myAnswerFileName);
     }
 
     @Test
     public void generateReport() {
         AnswerChecker answerChecker = new AnswerChecker();
         String prefix = "examTopic/";
-        String myAnswerFileName = "myAnswer-2022-02-13T13:47:27.582768.txt";
+        String myAnswerFileName = "myAnswer-2022-03-21T22:24:40.911755.txt";
 
         String rightAnswerPath = prefix + "examTopicAnswer.txt";
         String myAnswerPath = prefix + "myAnswer/" + myAnswerFileName;
