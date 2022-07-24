@@ -1,0 +1,5 @@
+Summary---------------------
+Total answer: 5, right number: 3, wrong number: 2, right rate: 60.0%
+Detail wrong info-------------
+WrongResult{question=109, rightAnswer=[C], yourAnswer=[A]}
+WrongResult{question=110, rightAnswer=[B], yourAnswer=[C]}
