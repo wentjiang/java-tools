@@ -1,10 +1,7 @@
 package com.wentjiang.examtool;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AnswerChecker {
 
@@ -31,6 +28,7 @@ public class AnswerChecker {
                 wrongResults.add(new WrongResult(questionNum, rightAnswer.getAnswers(), yourAnswer.getAnswers()));
             }
         }
+        wrongResults.sort(Comparator.comparingInt(WrongResult::getQuestion));
 
         showResultInConsole(rightCount, wrongCount, wrongResults);
         writeToReportFile(rightCount, wrongCount, wrongResults, reportFile);
