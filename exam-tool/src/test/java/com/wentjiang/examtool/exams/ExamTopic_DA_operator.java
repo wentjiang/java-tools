@@ -21,7 +21,7 @@ public class ExamTopic_DA_operator {
     public void questionList() {
         QuestionListWriter questionListWriter = new QuestionListWriter();
         String myAnswerFileName = "myAnswer-" + LocalDateTime.now() + ".txt";
-        questionListWriter.writeQuestionAsFile(81, 140, myAnswerFileName);
+        questionListWriter.writeQuestionAsFile(0, 65, myAnswerFileName);
     }
 
     @Test

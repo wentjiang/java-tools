@@ -1,3 +1,0 @@
-Summary---------------------
-Total answer: 10, right number: 10, wrong number: 0, right rate: 100.0%
-Detail wrong info-------------
